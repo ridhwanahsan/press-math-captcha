@@ -1,11 +1,11 @@
-w# Press Math Captcha
+# Press Math Captcha
 
 Lightweight, GDPR‑friendly math CAPTCHA for WordPress login, Contact Form 7, and WooCommerce forms. No external services, no tracking, and WordPress.org compliant.
 
 ## ✨ Features
 
 - ✅ WordPress login protection (captcha on `wp-login.php`)
-- ✅ Contact Form 7 integration via `[mathcaptcha]` / `[mathcaptcha*]`
+- ✅ Contact Form 7 integration via `[pmcMathcaptcha]` / `[pmcMathcaptcha*]`
 - ✅ WooCommerce login + registration protection
 - ✅ Configurable difficulty and operations (Addition/Subtraction/Multiplication/Random)
 - ✅ Hide captcha for logged-in users
@@ -35,8 +35,8 @@ Lightweight, GDPR‑friendly math CAPTCHA for WordPress login, Contact Form 7, a
 Add a captcha field to any CF7 form:
 
 ```
-[mathcaptcha]   — optional
-[mathcaptcha*]  — required
+[pmcMathcaptcha]   — optional
+[pmcMathcaptcha*]  — required
 ```
 
 ## 🛡️ Security Notes

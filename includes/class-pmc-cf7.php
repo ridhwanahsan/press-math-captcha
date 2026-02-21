@@ -16,7 +16,7 @@ class PMC_CF7 {
 
     public function register_tag() {
         if ( function_exists( 'wpcf7_add_form_tag' ) ) {
-            wpcf7_add_form_tag( array( 'mathcaptcha', 'mathcaptcha*' ), array( $this, 'render_tag' ), true );
+            wpcf7_add_form_tag( array( 'pmcMathcaptcha', 'pmcMathcaptcha*' ), array( $this, 'render_tag' ), true );
         }
     }
 

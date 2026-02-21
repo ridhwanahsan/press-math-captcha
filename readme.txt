@@ -17,7 +17,7 @@ Press Math Captcha adds a GDPR-friendly, math-based CAPTCHA to protect your form
 Features:
 
 * WordPress login protection (captcha on wp-login.php)
-* Contact Form 7 integration via [mathcaptcha] / [mathcaptcha*]
+* Contact Form 7 integration via [pmcMathcaptcha] / [pmcMathcaptcha*]
 * WooCommerce login and registration protection
 * Configurable difficulty and operations (Addition/Subtraction/Multiplication/Random)
 * Hide captcha for logged-in users
@@ -35,7 +35,7 @@ Features:
 == Frequently Asked Questions ==
 
 = How do I add it to Contact Form 7? =
-Use the form tag `[mathcaptcha]` or `[mathcaptcha*]` in your CF7 form.
+Use the form tag `[pmcMathcaptcha]` or `[pmcMathcaptcha*]` in your CF7 form.
 
 = Does it work for logged-in users? =
 You can hide CAPTCHA for logged-in users via the settings page.
