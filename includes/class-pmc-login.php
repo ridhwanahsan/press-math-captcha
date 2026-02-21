@@ -24,7 +24,7 @@ class PMC_Login {
             return;
         }
 
-        echo wp_kses_post( $this->captcha->render_field( 'pmc_login_captcha' ) );
+        echo wp_kses( $this->captcha->render_field( 'pmc_login_captcha' ), $this->captcha->get_allowed_html() );
     }
 
     public function validate_captcha( $user, $username, $password ) {

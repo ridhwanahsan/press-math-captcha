@@ -48,16 +48,45 @@ class PMC_Captcha {
         ob_start();
         ?>
         <div class="pmc-captcha-field">
-            <label for="<?php echo esc_attr( $field_id ); ?>">
-                <?php echo esc_html( $problem['question'] ); ?>
-            </label>
-            <input type="number" name="<?php echo esc_attr( $field_id ); ?>" id="<?php echo esc_attr( $field_id ); ?>" value="" />
+            <p class="pmc-captcha-question">
+                <label for="<?php echo esc_attr( $field_id ); ?>">
+                    <?php echo esc_html( $problem['question'] ); ?>
+                </label>
+            </p>
+            <p class="pmc-captcha-input">
+                <input type="text" class="input" name="<?php echo esc_attr( $field_id ); ?>" id="<?php echo esc_attr( $field_id ); ?>" value="" inputmode="numeric" pattern="[0-9]*" />
+            </p>
             <input type="hidden" name="pmc_token" value="<?php echo esc_attr( $token ); ?>" />
-            <input type="text" name="pmc_website_url" value="" style="display:none" autocomplete="off" />
+            <input type="hidden" name="pmc_website_url" value="" autocomplete="off" />
             <?php wp_nonce_field( 'pmc_captcha_nonce', 'pmc_nonce' ); ?>
         </div>
         <?php
         return ob_get_clean();
+    }
+
+    public function get_allowed_html() {
+        return array(
+            'div'   => array(
+                'class' => true,
+            ),
+            'p'     => array(
+                'class' => true,
+            ),
+            'label' => array(
+                'for' => true,
+            ),
+            'input' => array(
+                'type'        => true,
+                'class'       => true,
+                'name'        => true,
+                'id'          => true,
+                'value'       => true,
+                'inputmode'   => true,
+                'pattern'     => true,
+                'autocomplete'=> true,
+                'style'       => true,
+            ),
+        );
     }
 
     public function validate( $user_answer, $token ) {

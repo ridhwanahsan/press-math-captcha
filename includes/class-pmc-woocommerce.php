@@ -24,7 +24,7 @@ class PMC_Woocommerce {
             return;
         }
 
-        echo wp_kses_post( $this->captcha->render_field( 'pmc_wc_login_captcha' ) );
+        echo wp_kses( $this->captcha->render_field( 'pmc_wc_login_captcha' ), $this->captcha->get_allowed_html() );
     }
 
     public function render_register_captcha() {
@@ -37,7 +37,7 @@ class PMC_Woocommerce {
             return;
         }
 
-        echo wp_kses_post( $this->captcha->render_field( 'pmc_wc_register_captcha' ) );
+        echo wp_kses( $this->captcha->render_field( 'pmc_wc_register_captcha' ), $this->captcha->get_allowed_html() );
     }
 
     public function validate_login( $errors, $username, $password ) {
