@@ -1,0 +1,75 @@
+# Translation template for Press Math Captcha
+msgid ""
+msgstr ""
+"Project-Id-Version: Press Math Captcha 1.0.0\n"
+"POT-Creation-Date: 2026-02-21 06:01+0000\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Press Math Captcha"
+msgstr ""
+
+msgid "General Settings"
+msgstr ""
+
+msgid "Enable on WordPress Login"
+msgstr ""
+
+msgid "Enable on Contact Form 7"
+msgstr ""
+
+msgid "Enable on WooCommerce"
+msgstr ""
+
+msgid "Hide for Logged-in Users"
+msgstr ""
+
+msgid "Enable Rate Limiting"
+msgstr ""
+
+msgid "Difficulty"
+msgstr ""
+
+msgid "Easy"
+msgstr ""
+
+msgid "Medium"
+msgstr ""
+
+msgid "Hard"
+msgstr ""
+
+msgid "Operation"
+msgstr ""
+
+msgid "Random"
+msgstr ""
+
+msgid "Addition"
+msgstr ""
+
+msgid "Subtraction"
+msgstr ""
+
+msgid "Multiplication"
+msgstr ""
+
+msgid "Error Message"
+msgstr ""
+
+msgid "Max Attempts"
+msgstr ""
+
+msgid "Block Duration (minutes)"
+msgstr ""
+
+msgid "Incorrect captcha answer. Please try again."
+msgstr ""
+
+msgid "Invalid submission."
+msgstr ""
+
+msgid "Too many failed attempts. Please try again later."
+msgstr ""

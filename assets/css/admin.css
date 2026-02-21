@@ -1,0 +1,18 @@
+.pmc-settings {
+    max-width: 800px;
+}
+
+.pmc-settings table.form-table th {
+    width: 260px;
+}
+
+.pmc-settings input[type="text"],
+.pmc-settings select {
+    min-width: 260px;
+}
+
+@media (max-width: 782px) {
+    .pmc-settings table.form-table th {
+        width: auto;
+    }
+}
