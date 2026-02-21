@@ -52,11 +52,6 @@ function pmc_deactivate_plugin() {
 }
 register_deactivation_hook( __FILE__, 'pmc_deactivate_plugin' );
 
-function pmc_load_textdomain() {
-    load_plugin_textdomain( 'press-math-captcha', false, dirname( PMC_PLUGIN_BASENAME ) . '/languages' );
-}
-add_action( 'plugins_loaded', 'pmc_load_textdomain' );
-
 function pmc_run() {
     $loader = new PMC_Loader();
     $loader->run();

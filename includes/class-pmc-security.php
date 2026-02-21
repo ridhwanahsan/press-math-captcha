@@ -11,10 +11,12 @@ class PMC_Security {
     }
 
     public function is_honeypot_filled() {
+        // phpcs:ignore WordPress.Security.NonceVerification.Missing -- nonce is verified at form handlers before validation.
         if ( empty( $_POST['pmc_website_url'] ) ) {
             return false;
         }
 
+        // phpcs:ignore WordPress.Security.NonceVerification.Missing -- nonce is verified at form handlers before validation.
         $value = sanitize_text_field( wp_unslash( $_POST['pmc_website_url'] ) );
         return '' !== $value;
     }

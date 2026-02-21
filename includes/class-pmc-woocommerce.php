@@ -24,7 +24,7 @@ class PMC_Woocommerce {
             return;
         }
 
-        echo $this->captcha->render_field( 'pmc_wc_login_captcha' );
+        echo wp_kses_post( $this->captcha->render_field( 'pmc_wc_login_captcha' ) );
     }
 
     public function render_register_captcha() {
@@ -37,7 +37,7 @@ class PMC_Woocommerce {
             return;
         }
 
-        echo $this->captcha->render_field( 'pmc_wc_register_captcha' );
+        echo wp_kses_post( $this->captcha->render_field( 'pmc_wc_register_captcha' ) );
     }
 
     public function validate_login( $errors, $username, $password ) {
@@ -52,6 +52,12 @@ class PMC_Woocommerce {
 
         if ( $this->security->is_ip_blocked() ) {
             $errors->add( 'pmc_blocked', $this->security->get_block_message() );
+            return $errors;
+        }
+
+        $nonce = isset( $_POST['pmc_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['pmc_nonce'] ) ) : '';
+        if ( empty( $nonce ) || ! wp_verify_nonce( $nonce, 'pmc_captcha_nonce' ) ) {
+            $errors->add( 'pmc_nonce', __( 'Invalid submission.', 'press-math-captcha' ) );
             return $errors;
         }
 
@@ -80,6 +86,12 @@ class PMC_Woocommerce {
 
         if ( $this->security->is_ip_blocked() ) {
             $errors->add( 'pmc_blocked', $this->security->get_block_message() );
+            return $errors;
+        }
+
+        $nonce = isset( $_POST['pmc_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['pmc_nonce'] ) ) : '';
+        if ( empty( $nonce ) || ! wp_verify_nonce( $nonce, 'pmc_captcha_nonce' ) ) {
+            $errors->add( 'pmc_nonce', __( 'Invalid submission.', 'press-math-captcha' ) );
             return $errors;
         }
 

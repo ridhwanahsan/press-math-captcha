@@ -1,8 +1,8 @@
 === Press Math Captcha ===
 Contributors: ridhwanahsann
-Tags: captcha, math, login, contact form 7, woocommerce, security
+Tags: captcha, math, login, contact form 7, woocommerce
 Requires at least: 5.5
-Tested up to: 6.6
+Tested up to: 6.9
 Requires PHP: 7.4
 Stable tag: 1.0.0
 License: GPLv2 or later

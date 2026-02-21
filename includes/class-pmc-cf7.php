@@ -29,11 +29,17 @@ class PMC_CF7 {
             return '<span class="wpcf7-not-valid-tip">' . esc_html( $this->security->get_block_message() ) . '</span>';
         }
 
-        return $this->captcha->render_field( 'pmc_cf7_captcha' );
+        return wp_kses_post( $this->captcha->render_field( 'pmc_cf7_captcha' ) );
     }
 
     public function validate( $result, $tag ) {
         if ( $this->should_hide() ) {
+            return $result;
+        }
+
+        $nonce = isset( $_POST['pmc_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['pmc_nonce'] ) ) : '';
+        if ( empty( $nonce ) || ! wp_verify_nonce( $nonce, 'pmc_captcha_nonce' ) ) {
+            $result->invalidate( $tag, __( 'Invalid submission.', 'press-math-captcha' ) );
             return $result;
         }
 

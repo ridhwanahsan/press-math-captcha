@@ -1,4 +1,4 @@
-# Press Math Captcha
+w# Press Math Captcha
 
 Lightweight, GDPR‑friendly math CAPTCHA for WordPress login, Contact Form 7, and WooCommerce forms. No external services, no tracking, and WordPress.org compliant.
 

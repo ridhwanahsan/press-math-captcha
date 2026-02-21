@@ -24,7 +24,7 @@ class PMC_Login {
             return;
         }
 
-        echo $this->captcha->render_field( 'pmc_login_captcha' );
+        echo wp_kses_post( $this->captcha->render_field( 'pmc_login_captcha' ) );
     }
 
     public function validate_captcha( $user, $username, $password ) {
@@ -38,6 +38,11 @@ class PMC_Login {
 
         if ( $this->security->is_ip_blocked() ) {
             return new WP_Error( 'pmc_blocked', $this->security->get_block_message() );
+        }
+
+        $nonce = isset( $_POST['pmc_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['pmc_nonce'] ) ) : '';
+        if ( empty( $nonce ) || ! wp_verify_nonce( $nonce, 'pmc_captcha_nonce' ) ) {
+            return new WP_Error( 'pmc_nonce', __( 'Invalid submission.', 'press-math-captcha' ) );
         }
 
         $answer = isset( $_POST['pmc_login_captcha'] ) ? sanitize_text_field( wp_unslash( $_POST['pmc_login_captcha'] ) ) : '';
